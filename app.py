@@ -37,7 +37,9 @@ db = client.scrape_db
 @app.route('/')
 def index():
     scrape_values = list(db.scrape.find())
-    print(scrape_values)
+    if len(scrape_values) == 0:
+        scrape_values = [scrape(),]
+        print(scrape_values)
     return render_template('index.html', scrape_values=scrape_values)
 
 @app.route('/scrape')
@@ -46,7 +48,8 @@ def call_scrape():
     db.scrape.drop()
     scrape_values = scrape()
     db.scrape.insert_one(scrape_values)
-    return render_template('index.html', scrape_values=scrape_values)
+    print(scrape_values)
+    return render_template('index.html', scrape_values=[scrape_values,])
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -54,7 +54,7 @@
         </div>
         <!-- Facts Table -->
         <div class="row">
-          {{ scrape_values[0].facts_html_table }}
+          {{ scrape_values[0].facts_html_table | safe }}
         </div>
     </div>
 

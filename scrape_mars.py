@@ -35,7 +35,7 @@ def scrape():
     mars_facts_table.columns = mars_facts_table.iloc[0]
     mars_facts_table.drop(index=0, inplace=True)
     mars_facts_table.set_index("Mars - Earth Comparison",inplace=True)
-    facts_html = mars_facts_table.to_html()
+    facts_html = mars_facts_table.to_html(classes=["table","table-bordered", "table-striped", "table-hover"])
     mars_facts_table.head()
 
     # 4. High Res Photos
