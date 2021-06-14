@@ -42,7 +42,7 @@ def scrape():
     browser.visit(mars_geo_url)
     hemisphere_image_urls = list()
     geo_html = browser.html
-    geo_soup = BeautifulSoup(geo_html)
+    geo_soup = BeautifulSoup(geo_html, 'html.parser')
     geo_links = geo_soup.find_all("a", {"class", "itemLink product-item"}) #get all the links
     endpoints = set([link["href"] for link in geo_links]) #get the url enpoints
     endpoints.remove("#")
