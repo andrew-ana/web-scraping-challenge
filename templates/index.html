@@ -14,16 +14,25 @@
         <!-- JUMBOTRON -->
         <div class="jumbotron text-center">
           <h1>Mars Information</h1>
-          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape the Web for Mars information</a></p>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Search the web for updated Info</a></p>
         </div>
         
+        <!-- Mars News -->
+        <div class="row">
+            <div class="col-md-10">
+                <h2> {{ scrape_values[0].mars_news.title }} </h2>
+                <p> {{ scrape_values[0].mars_news.description }} </p>
+                <p> {{ scrape_values[0].mars_news.date }} </p>
+            </div>
+        </div>
+        
+        <!-- Featured Image -->
         <div class="card bg-dark text-white col-md-6">
           <img class="card-img" src= {{ scrape_values[0].featured_image_url }} style="width: 48rem;" >
               <div class="card-img-overlay">
                   <h5 class="card-title">Featured Mars Image</h5>
               </div>
         </div>
-        
         
         <!-- Facts Table -->
         <div class="row">
