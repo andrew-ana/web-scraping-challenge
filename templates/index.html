@@ -16,7 +16,22 @@
           <h1>Mars Information</h1>
           <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape the Web for Mars information</a></p>
         </div>
-      
+        
+        <div class="card bg-dark text-white col-md-6">
+          <img class="card-img" src= {{ scrape_values[0].featured_image_url }} style="width: 48rem;" >
+              <div class="card-img-overlay">
+                  <h5 class="card-title">Featured Mars Image</h5>
+              </div>
+        </div>
+        
+        
+        <!-- Facts Table -->
+        <div class="row">
+            <div class="col-md-6">
+              {{ scrape_values[0].facts_html_table | safe }}
+            </div>
+        </div>
+        
         <!-- Image Cards -->
         <div class="row">
             <!-- Card 1 -->
@@ -52,10 +67,7 @@
               </div>
             </div>
         </div>
-        <!-- Facts Table -->
-        <div class="row">
-          {{ scrape_values[0].facts_html_table | safe }}
-        </div>
+
     </div>
 
 </body>

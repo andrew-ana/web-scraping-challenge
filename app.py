@@ -17,22 +17,6 @@ client = pymongo.MongoClient(conn)
 db = client.scrape_db
 
 
-
-# Creates a collection in the database and inserts two documents
-#db.scrape.insert_many(
-#    [
-#        {
-#            'player': 'Jessica',
-#            'position': 'Point Guard'
-#        },
-#        {
-#            'player': 'Mark',
-#            'position': 'Center'
-#        }
-#    ]
-#)
-
-
 # Set route
 @app.route('/')
 def index():
