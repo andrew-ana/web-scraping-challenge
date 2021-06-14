@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Stuff</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- JUMBOTRON -->
+        <div class="jumbotron text-center">
+          <h1>Mars Information</h1>
+          <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape the Web for Mars information</a></p>
+        </div>
+      
+        <!-- Image Cards -->
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="card card col-md-4" style="width: 24rem;">
+              <img class="card-img-top img-responsive" 
+               src={{ scrape_values[0].high_res_photos[0].img_url }} alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{ scrape_values[0].high_res_photos[0].title }}</h5>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card card col-md-4" style="width: 24rem;">
+              <img class="card-img-top img-responsive" 
+               src={{ scrape_values[0].high_res_photos[1].img_url }} alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{ scrape_values[0].high_res_photos[1].title }}</h5>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card card col-md-4" style="width: 24rem;">
+              <img class="card-img-top img-responsive" 
+               src={{ scrape_values[0].high_res_photos[2].img_url }} alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{ scrape_values[0].high_res_photos[2].title }}</h5>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card card col-md-4" style="width: 24rem;">
+              <img class="card-img-top img-responsive" 
+               src={{ scrape_values[0].high_res_photos[3].img_url }} alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{ scrape_values[0].high_res_photos[3].title }}</h5>
+              </div>
+            </div>
+        </div>
+        <!-- Facts Table -->
+        <div class="row">
+          {{ scrape_values[0].facts_html_table }}
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -7,7 +7,7 @@ import pandas as pd
 def scrape():
     # Setup splinter
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
     # URLS
     mars_news_url = "https://redplanetscience.com/"
